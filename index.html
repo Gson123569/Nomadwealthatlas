@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Nomad Wealth Atlas — Your Map to Financial Freedom</title>
+  <meta name="description" content="Interactive guide to global wealth structuring. From $1M to $100T, find your path to financial freedom with jurisdiction comparison tools and tax optimization strategies.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">Nomad Wealth Atlas</a>
+      <div class="navbar-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="tools.html" class="nav-link">Tools</a>
+        <a href="calculator.html" class="nav-link">Calculator</a>
+        <a href="sources.html" class="nav-link">Sources</a>
+        <a href="now.html" class="nav-link">Now</a>
+      </div>
+    </div>
+  </nav>
+  
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-gradient">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="hero-grid"></div>
+      </div>
+      
+      <div class="hero-content">
+        <div class="container">
+          <div class="hero-badge">Updated March 2025</div>
+          <h1 class="hero-title">Your Map to <span>Financial Freedom</span></h1>
+          <p class="hero-subtitle">Interactive guide to global wealth structuring. From $1M to $100T, find your optimal jurisdiction, minimize taxes, and protect your assets.</p>
+          <div class="hero-actions">
+            <a href="calculator.html" class="btn btn-primary btn-lg">Calculate Your Savings →</a>
+            <a href="#tiers" class="btn btn-secondary btn-lg">Explore Wealth Tiers</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-value">180+</div>
+              <div class="hero-stat-label">Countries Covered</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">8</div>
+              <div class="hero-stat-label">Wealth Tiers</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">$0</div>
+              <div class="hero-stat-label">Always Free</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Calculator Preview -->
+    <section class="section section-gray" id="calculator">
+      <div class="container">
+        <div class="section-header">
+          <h2>See How Much You Could Save</h2>
+          <p>Compare your current tax burden with optimized global structuring in under 30 seconds.</p>
+        </div>
+        
+        <div class="calculator-wrapper">
+          <div class="calculator-inputs">
+            <h3 class="mb-4">Tax Optimization Calculator</h3>
+            <div class="input-group">
+              <label class="input-label">Annual Income</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" class="input-field" id="income" value="250000">
+              </div>
+            </div>
+            <div class="input-group">
+              <label class="input-label">Current Country</label>
+              <select class="select-field" id="currentCountry">
+                <option value="us">United States (33%)</option>
+                <option value="uk">United Kingdom (45%)</option>
+                <option value="ca">Canada (53.5%)</option>
+                <option value="au">Australia (47%)</option>
+                <option value="de">Germany (45%)</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label class="input-label">Target Jurisdiction</label>
+              <select class="select-field" id="targetCountry">
+                <option value="uae">UAE (0% tax)</option>
+                <option value="singapore">Singapore (15%)</option>
+                <option value="cyprus">Cyprus (0% non-dom)</option>
+                <option value="portugal">Portugal NHR (10%)</option>
+              </select>
+            </div>
+            <a href="calculator.html" class="btn btn-primary" style="width: 100%;">Open Full Calculator →</a>
+          </div>
+          
+          <div class="results-panel">
+            <div class="results-header">
+              <h3>Your Potential Savings</h3>
+              <p>Based on your inputs</p>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Current Annual Tax</span>
+              <span class="result-value" id="currentTax">$82,500</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Optimized Tax</span>
+              <span class="result-value positive" id="optimizedTax">$0</span>
+            </div>
+            <div class="result-highlight">
+              <div class="result-row">
+                <span class="result-label">Annual Savings</span>
+                <span class="result-value" id="annualSavings">$82,500</span>
+              </div>
+            </div>
+            <div class="result-row">
+              <span class="result-label">10-Year Savings</span>
+              <span class="result-value" id="tenYearSavings">$825,000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Wealth Tiers -->
+    <section class="section" id="tiers">
+      <div class="container">
+        <div class="section-header">
+          <h2>Find Your Wealth Tier</h2>
+          <p>Each tier represents a different level of wealth with specific strategies and jurisdictions.</p>
+        </div>
+        
+        <div class="grid-4">
+          <a href="escape.html" class="card card-link tier-card" style="--tier-color: var(--escape);">
+            <div class="tier-icon" style="background: #FDF8F3;">🌴</div>
+            <h3 class="tier-name">Escape</h3>
+            <p class="tier-range" style="color: var(--escape);">$1M – $5M</p>
+            <p class="tier-description">First steps to financial freedom. Remote work visas and basic offshore accounts.</p>
+            <span class="tier-link">Explore →</span>
+          </a>
+          
+          <a href="structure.html" class="card card-link tier-card" style="--tier-color: var(--structure);">
+            <div class="tier-icon" style="background: #F0F7FA;">🏗️</div>
+            <h3 class="tier-name">Structure</h3>
+            <p class="tier-range" style="color: var(--structure);">$5M – $20M</p>
+            <p class="tier-description">Building the foundation. Company formations and tax treaty optimization.</p>
+            <span class="tier-link">Explore →</span>
+          </a>
+          
+          <a href="dynasty.html" class="card card-link tier-card" style="--tier-color: var(--dynasty);">
+            <div class="tier-icon" style="background: #FAF5FF;">👑</div>
+            <h3 class="tier-name">Dynasty</h3>
+            <p class="tier-range" style="color: var(--dynasty);">$20M – $50M</p>
+            <p class="tier-description">Multi-generational wealth. Family offices and trust structures.</p>
+            <span class="tier-link">Explore →</span>
+          </a>
+          
+          <a href="fortress.html" class="card card-link tier-card" style="--tier-color: var(--fortress);">
+            <div class="tier-icon" style="background: #F5F5F5;">🏰</div>
+            <h3 class="tier-name">Fortress</h3>
+            <p class="tier-range" style="color: var(--fortress);">$50M – $100M</p>
+            <p class="tier-description">Asset protection paramount. Advanced legal structures and privacy.</p>
+            <span class="tier-link">Explore →</span>
+          </a>
+          
+          <a href="institution.html" class="card card-link tier-card" style="--tier-color: var(--institution);">
+            <div class="tier-icon" style="background: #FFFBF0;">🏛️</div>
+            <h3 class="tier-name">Institution</h3>
+            <p class="tier-range" style="color: var(--institution);">$100M – $500M</p>
+            <p class="tier-description">Institutional-grade structures. Private foundations and philanthropy.</p>
+            <span class="tier-link">Explore →</span>
+          </a>
+          
+          <a href="statecraft.html" class="card card-link tier-card" style="--tier-color: var(--statecraft);">
+            <div class="tier-icon" style="background: #F8F5FF;">🌐</div>
+            <h3 class="tier-name">Statecraft</h3>
+            <p class="tier-range" style="color: var(--statecraft);">$500M – $1B</p>
+            <p class="tier-description">Diplomatic considerations. Treaty negotiations and geopolitical strategy.</p>
+            <span class="tier-link">Explore →</span>
+          </a>
+          
+          <a href="sovereign.html" class="card card-link tier-card" style="--tier-color: var(--sovereign);">
+            <div class="tier-icon" style="background: #FFFFFF;">⚡</div>
+            <h3 class="tier-name">Sovereign</h3>
+            <p class="tier-range" style="color: var(--sovereign);">$1B – $10B</p>
+            <p class="tier-description">State-level influence. Custom legislation and bilateral agreements.</p>
+            <span class="tier-link">Explore →</span>
+          </a>
+          
+          <a href="civilization.html" class="card card-link tier-card" style="--tier-color: var(--civilization);">
+            <div class="tier-icon" style="background: #F8F8F8;">🌍</div>
+            <h3 class="tier-name">Civilization</h3>
+            <p class="tier-range" style="color: var(--civilization);">$10B – $100T</p>
+            <p class="tier-description">Historical impact. Nation-building and civilizational legacy.</p>
+            <span class="tier-link">Explore →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tools -->
+    <section class="section section-gray">
+      <div class="container">
+        <div class="section-header">
+          <h2>Free Tools & Resources</h2>
+          <p>Practical calculators and comparisons to help you make informed decisions.</p>
+        </div>
+        
+        <div class="grid-3">
+          <a href="calculator.html" class="card">
+            <div class="tool-icon">🧮</div>
+            <h3 class="tool-name">Tax Calculator</h3>
+            <p class="tool-description">Compare tax rates across 180+ countries. See exactly how much you could save.</p>
+            <div class="tool-meta"><span>Interactive</span><span>•</span><span>Real-time</span></div>
+          </a>
+          
+          <div class="card">
+            <div class="tool-icon">📊</div>
+            <h3 class="tool-name">Jurisdiction Comparison</h3>
+            <p class="tool-description">Side-by-side comparison of residency programs, tax benefits, and lifestyle factors.</p>
+            <div class="tool-meta"><span>Compare</span><span>•</span><span>Filter</span></div>
+          </div>
+          
+          <div class="card">
+            <div class="tool-icon">💰</div>
+            <h3 class="tool-name">Cost of Living Index</h3>
+            <p class="tool-description">Understand true purchasing power across global cities and regions.</p>
+            <div class="tool-meta"><span>Data</span><span>•</span><span>2025</span></div>
+          </div>
+          
+          <div class="card">
+            <div class="tool-icon">🏦</div>
+            <h3 class="tool-name">Banking Guide</h3>
+            <p class="tool-description">Navigate offshore banking. Find the best jurisdictions for your needs.</p>
+            <div class="tool-meta"><span>Guide</span><span>•</span><span>Updated</span></div>
+          </div>
+          
+          <div class="card">
+            <div class="tool-icon">📍</div>
+            <h3 class="tool-name">Residency Tracker</h3>
+            <p class="tool-description">Track your days in each country to maintain tax residency status.</p>
+            <div class="tool-meta"><span>Tracker</span><span>•</span><span>Alerts</span></div>
+          </div>
+          
+          <div class="card">
+            <div class="tool-icon">✅</div>
+            <h3 class="tool-name">Document Checklist</h3>
+            <p class="tool-description">Comprehensive checklists for residency applications and company formations.</p>
+            <div class="tool-meta"><span>PDF</span><span>•</span><span>Download</span></div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-6">
+          <a href="tools.html" class="btn btn-primary">View All Tools →</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Teaser -->
+    <section class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <h2>Built by Nomads, For Nomads</h2>
+            <p>The Nomad Wealth Atlas was created by a collective of location-independent entrepreneurs, tax professionals, and financial researchers who believe wealth optimization should be accessible to everyone.</p>
+            
+            <div class="about-features">
+              <div class="about-feature">
+                <div class="about-feature-icon">🔍</div>
+                <div>
+                  <h4>Research-Backed</h4>
+                  <p>Every recommendation is based on verified data and current legislation.</p>
+                </div>
+              </div>
+              <div class="about-feature">
+                <div class="about-feature-icon">🔄</div>
+                <div>
+                  <h4>Always Current</h4>
+                  <p>We track law changes across 180+ jurisdictions so you don't have to.</p>
+                </div>
+              </div>
+              <div class="about-feature">
+                <div class="about-feature-icon">🤝</div>
+                <div>
+                  <h4>Community Driven</h4>
+                  <p>Insights from thousands of nomads who've walked this path before.</p>
+                </div>
+              </div>
+            </div>
+            
+            <a href="about.html" class="btn btn-primary">Meet the Team →</a>
+          </div>
+          
+          <div class="about-visual">
+            <p style="font-size: 18px; font-style: italic; color: var(--gray-500); line-height: 1.6; margin-bottom: 24px;">"The Nomad Wealth Atlas saved me over $200,000 in my first year alone. The jurisdiction comparison tool helped me find the perfect setup for my business."</p>
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary), #5856D6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">MK</div>
+              <div>
+                <h5 style="font-size: 16px;">Marcus K.</h5>
+                <p style="font-size: 14px; color: var(--gray-400);">Tech Entrepreneur, Dubai</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Disclaimer -->
+  <section class="disclaimer">
+    <div class="container">
+      <p><strong>Important:</strong> The Nomad Wealth Atlas is for educational purposes only. Nothing here constitutes legal, tax, or financial advice. Always consult qualified professionals before making decisions.</p>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Nomad Wealth Atlas</h3>
+          <p>Your interactive guide to global wealth structuring. From $1M to $100T, find your path to financial freedom.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="tools.html" class="footer-link">Tools</a>
+            <a href="sources.html" class="footer-link">Sources</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Wealth Tiers</h4>
+          <div class="footer-links">
+            <a href="escape.html" class="footer-link">Escape ($1M-$5M)</a>
+            <a href="structure.html" class="footer-link">Structure ($5M-$20M)</a>
+            <a href="dynasty.html" class="footer-link">Dynasty ($20M-$50M)</a>
+            <a href="fortress.html" class="footer-link">Fortress ($50M-$100M)</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="calculator.html" class="footer-link">Tax Calculator</a>
+            <a href="now.html" class="footer-link">Now Page</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 Nomad Wealth Atlas. Open source under MIT License.</p>
+        <p class="footer-disclaimer">Not financial, legal, or tax advice. Consult professionals.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>

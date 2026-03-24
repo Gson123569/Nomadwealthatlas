@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Calculator — The Nomad Wealth Atlas</title>
+  <meta name="description" content="Calculate your potential tax savings by comparing jurisdictions. See exactly how much you could save with strategic relocation.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">Nomad Wealth Atlas</a>
+      <div class="navbar-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="tools.html" class="nav-link">Tools</a>
+        <a href="calculator.html" class="nav-link">Calculator</a>
+        <a href="sources.html" class="nav-link">Sources</a>
+        <a href="now.html" class="nav-link">Now</a>
+      </div>
+    </div>
+  </nav>
+  
+  <main id="main" style="padding-top: 72px; background: var(--gray-50); min-height: 100vh;">
+    <div class="container" style="padding: 64px 24px;">
+      <div class="text-center" style="margin-bottom: 48px;">
+        <h1 style="font-size: 48px; margin-bottom: 16px;">Tax Optimization Calculator</h1>
+        <p style="color: var(--gray-400); font-size: 18px; max-width: 600px; margin: 0 auto;">See exactly how much you could save by optimizing your tax jurisdiction. Compare rates across 180+ countries.</p>
+      </div>
+      
+      <div class="calculator-wrapper">
+        <div class="calculator-inputs">
+          <h3 style="margin-bottom: 24px;">Your Information</h3>
+          
+          <div class="input-group">
+            <label class="input-label">Annual Income (USD)</label>
+            <div class="input-wrapper">
+              <span class="input-prefix">$</span>
+              <input type="number" class="input-field" id="income" value="250000" min="0" step="1000">
+            </div>
+          </div>
+          
+          <div class="slider-container">
+            <div class="slider-label">
+              <span>Income Level</span>
+              <span id="incomeDisplay">$250,000</span>
+            </div>
+            <input type="range" class="slider" id="incomeSlider" min="50000" max="10000000" step="10000" value="250000">
+          </div>
+          
+          <div class="input-group" style="margin-top: 24px;">
+            <label class="input-label">Current Tax Residence</label>
+            <select class="select-field" id="currentCountry">
+              <option value="us">United States (37% federal + state)</option>
+              <option value="uk">United Kingdom (45% top rate)</option>
+              <option value="ca">Canada (53.5% top rate)</option>
+              <option value="au">Australia (45% + Medicare)</option>
+              <option value="de">Germany (45% + solidarity)</option>
+              <option value="fr">France (45% + surcharges)</option>
+              <option value="jp">Japan (55.9% top rate)</option>
+              <option value="nl">Netherlands (49.5% top rate)</option>
+              <option value="es">Spain (47% + regional)</option>
+              <option value="it">Italy (43% + regional)</option>
+              <option value="se">Sweden (52.9% average)</option>
+              <option value="dk">Denmark (55.9% top rate)</option>
+              <option value="be">Belgium (50% + social)</option>
+              <option value="at">Austria (55% top rate)</option>
+              <option value="fi">Finland (56.9% top rate)</option>
+              <option value="other">Other (custom rate)</option>
+            </select>
+          </div>
+          
+          <div class="input-group">
+            <label class="input-label">Target Jurisdiction</label>
+            <select class="select-field" id="targetCountry">
+              <option value="uae">UAE (0% personal income tax)</option>
+              <option value="singapore">Singapore (0-22% progressive)</option>
+              <option value="hongkong">Hong Kong (0-17% progressive)</option>
+              <option value="switzerland">Switzerland (0-11.5% + cantonal)</option>
+              <option value="malta">Malta (0-35% with refunds)</option>
+              <option value="cyprus">Cyprus (0-35% non-dom available)</option>
+              <option value="portugal">Portugal (NHR regime - 0-20%)</option>
+              <option value="panama">Panama (0% territorial)</option>
+              <option value="costarica">Costa Rica (0% territorial)</option>
+              <option value="paraguay">Paraguay (10% flat)</option>
+              <option value="bulgaria">Bulgaria (10% flat)</option>
+              <option value="romania">Romania (10% flat)</option>
+              <option value="hungary">Hungary (15% flat)</option>
+              <option value="estonia">Estonia (20% deferred)</option>
+              <option value="georgia">Georgia (1% small business)</option>
+              <option value="thailand">Thailand (0-35% LTR visa)</option>
+              <option value="malaysia">Malaysia (0-30% MM2H)</option>
+              <option value="bahamas">Bahamas (0%)</option>
+              <option value="cayman">Cayman Islands (0%)</option>
+              <option value="bermuda">Bermuda (0%)</option>
+            </select>
+          </div>
+          
+          <div class="input-group">
+            <label class="input-label">Filing Status</label>
+            <select class="select-field" id="filingStatus">
+              <option value="single">Single</option>
+              <option value="married">Married Filing Jointly</option>
+              <option value="head">Head of Household</option>
+            </select>
+          </div>
+          
+          <div style="background: #F0F7FA; border: 1px solid #5BA3B8; border-radius: 12px; padding: 16px; margin-top: 24px;">
+            <h4 style="font-size: 14px; color: var(--structure); margin-bottom: 8px;">ℹ️ How This Works</h4>
+            <p style="font-size: 14px; color: var(--gray-400); line-height: 1.6;">This calculator uses simplified tax rates for comparison. Actual tax liability depends on deductions, credits, and local regulations. Always consult a qualified tax professional.</p>
+          </div>
+        </div>
+        
+        <div class="results-panel">
+          <div class="results-header">
+            <h3>Your Potential Savings</h3>
+            <p>Based on your inputs</p>
+          </div>
+          
+          <div class="result-row">
+            <span class="result-label">Current Annual Tax</span>
+            <span class="result-value" id="currentTax">$82,500</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Optimized Annual Tax</span>
+            <span class="result-value positive" id="optimizedTax">$0</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Current Effective Rate</span>
+            <span class="result-value negative" id="currentRate">33.0%</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Optimized Effective Rate</span>
+            <span class="result-value positive" id="optimizedRate">0.0%</span>
+          </div>
+          
+          <div class="result-highlight">
+            <div class="result-row">
+              <span class="result-label">Annual Savings</span>
+              <span class="result-value" id="annualSavings">$82,500</span>
+            </div>
+          </div>
+          
+          <div class="long-term-section">
+            <h4>Projected Savings Over Time</h4>
+            <div class="result-row">
+              <span class="result-label">5 Years</span>
+              <span class="result-value" id="fiveYearSavings">$412,500</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">10 Years</span>
+              <span class="result-value" id="tenYearSavings">$825,000</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">20 Years</span>
+              <span class="result-value" id="twentyYearSavings">$1,650,000</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">30 Years</span>
+              <span class="result-value" id="thirtyYearSavings">$2,475,000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Popular Pairs -->
+      <div style="margin-top: 80px;">
+        <h2 class="text-center" style="margin-bottom: 48px;">Popular Jurisdiction Pairs</h2>
+        <div class="grid-3">
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <span style="font-size: 32px;">🇺🇸</span>
+              <span>→</span>
+              <span style="font-size: 32px;">🇦🇪</span>
+            </div>
+            <h3 style="font-size: 18px; margin-bottom: 8px;">US to UAE</h3>
+            <p style="font-size: 14px; color: var(--gray-400); margin-bottom: 16px;">Eliminate federal and state income tax entirely. Popular with tech entrepreneurs and traders.</p>
+            <div style="display: flex; gap: 8px;">
+              <span style="padding: 4px 8px; background: var(--success); color: white; border-radius: 4px; font-size: 12px; font-weight: 600;">0% Tax</span>
+              <span style="padding: 4px 8px; background: var(--gray-50); color: var(--gray-400); border-radius: 4px; font-size: 12px;">Easy Setup</span>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <span style="font-size: 32px;">🇬🇧</span>
+              <span>→</span>
+              <span style="font-size: 32px;">🇵🇹</span>
+            </div>
+            <h3 style="font-size: 18px; margin-bottom: 8px;">UK to Portugal</h3>
+            <p style="font-size: 14px; color: var(--gray-400); margin-bottom: 16px;">NHR regime offers 10 years of favorable tax treatment. Great for retirees and remote workers.</p>
+            <div style="display: flex; gap: 8px;">
+              <span style="padding: 4px 8px; background: var(--success); color: white; border-radius: 4px; font-size: 12px; font-weight: 600;">NHR Benefits</span>
+              <span style="padding: 4px 8px; background: var(--gray-50); color: var(--gray-400); border-radius: 4px; font-size: 12px;">EU Access</span>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <span style="font-size: 32px;">🇩🇪</span>
+              <span>→</span>
+              <span style="font-size: 32px;">🇨🇾</span>
+            </div>
+            <h3 style="font-size: 18px; margin-bottom: 8px;">Germany to Cyprus</h3>
+            <p style="font-size: 14px; color: var(--gray-400); margin-bottom: 16px;">Non-dom regime exempts foreign income from tax. Popular with entrepreneurs and investors.</p>
+            <div style="display: flex; gap: 8px;">
+              <span style="padding: 4px 8px; background: var(--success); color: white; border-radius: 4px; font-size: 12px; font-weight: 600;">Non-Dom</span>
+              <span style="padding: 4px 8px; background: var(--gray-50); color: var(--gray-400); border-radius: 4px; font-size: 12px;">EU</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Nomad Wealth Atlas</h3>
+          <p>Your interactive guide to global wealth structuring.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="tools.html" class="footer-link">Tools</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Wealth Tiers</h4>
+          <div class="footer-links">
+            <a href="escape.html" class="footer-link">Escape</a>
+            <a href="structure.html" class="footer-link">Structure</a>
+            <a href="dynasty.html" class="footer-link">Dynasty</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="calculator.html" class="footer-link">Calculator</a>
+            <a href="sources.html" class="footer-link">Sources</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 Nomad Wealth Atlas. MIT License.</p>
+        <p class="footer-disclaimer">Not financial, legal, or tax advice.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
